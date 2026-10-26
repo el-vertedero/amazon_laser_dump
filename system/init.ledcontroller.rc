@@ -1,0 +1,171 @@
+# Laser ledcontroller init config
+
+on post-fs
+    # On Laser 8512, PWM Channel 6 Controls the LED Brightness PWM
+    write /sys/class/pwm/pwmchip0/export "6"
+
+on boot
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_0/color
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_0/red
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_0/green
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_0/blue
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_0/brightness
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_0/trigger
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_1/color
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_1/red
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_1/green
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_1/blue
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_1/brightness
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_1/trigger
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_2/color
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_2/red
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_2/green
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_2/blue
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_2/brightness
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_2/trigger
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_3/color
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_3/red
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_3/green
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_3/blue
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_3/brightness
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_3/trigger
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_4/color
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_4/red
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_4/green
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_4/blue
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_4/brightness
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_4/trigger
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_5/color
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_5/red
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_5/green
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_5/blue
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_5/brightness
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_5/trigger
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_6/color
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_6/red
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_6/green
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_6/blue
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_6/brightness
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_6/trigger
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_7/color
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_7/red
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_7/green
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_7/blue
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_7/brightness
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_7/trigger
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_8/color
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_8/red
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_8/green
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_8/blue
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_8/brightness
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_8/trigger
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_9/color
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_9/red
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_9/green
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_9/blue
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_9/brightness
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_9/trigger
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_10/color
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_10/red
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_10/green
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_10/blue
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_10/brightness
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_10/trigger
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_11/color
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_11/red
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_11/green
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_11/blue
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_11/brightness
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_11/trigger
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_12/color
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_12/red
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_12/green
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_12/blue
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_12/brightness
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_12/trigger
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_13/color
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_13/red
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_13/green
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_13/blue
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_13/brightness
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_13/trigger
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_14/color
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_14/red
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_14/green
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_14/blue
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_14/brightness
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_14/trigger
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_15/color
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_15/red
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_15/green
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_15/blue
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_15/brightness
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_15/trigger
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_16/color
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_16/red
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_16/green
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_16/blue
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_16/brightness
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_16/trigger
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_17/color
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_17/red
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_17/green
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_17/blue
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_17/brightness
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_17/trigger
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_18/color
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_18/red
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_18/green
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_18/blue
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_18/brightness
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_18/trigger
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_19/color
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_19/red
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_19/green
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_19/blue
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_19/brightness
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_19/trigger
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_20/color
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_20/red
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_20/green
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_20/blue
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_20/brightness
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_20/trigger
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_21/color
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_21/red
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_21/green
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_21/blue
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_21/brightness
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_21/trigger
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_22/color
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_22/red
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_22/green
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_22/blue
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_22/brightness
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_22/trigger
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_23/color
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_23/red
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_23/green
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_23/blue
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_23/brightness
+    chown ledcontroller ledcontroller /sys/class/leds/lp5036:ledmod_23/trigger
+
+    # On Laser 8512, PWM Channel 6 Controls the LED Brightness PWM
+    chown ledcontroller ledcontroller /sys/class/pwm/pwmchip0/pwm6/period
+    chown ledcontroller ledcontroller /sys/class/pwm/pwmchip0/pwm6/duty_cycle
+    chown ledcontroller ledcontroller /sys/class/pwm/pwmchip0/pwm6/enable
+
+    # On Laser 8512, ledcontroller needs RW access to ledhven
+    chown ledcontroller ledcontroller /sys/class/i2c-dev/i2c-0/device/0-0030/ledhven
+    chown ledcontroller ledcontroller /sys/class/i2c-dev/i2c-0/device/0-0031/ledhven
+
+on post-fs-data
+   mkdir /data/ledcontroller 0760 ledcontroller ledcontroller
+   chown ledcontroller aipc /data/ledcontroller
+   chown ledcontroller aipc /system/etc/led_mute_ring_config_1.json
+   chown ledcontroller aipc /system/etc/led_mute_ring_config_2.json
+   chown --reference=/system/etc/led_mute_ring_config.json /data/ledcontroller/led_mute_ring_config.json
+
+on property:ledcontroller.restart=1
+    restart ledcontroller
+

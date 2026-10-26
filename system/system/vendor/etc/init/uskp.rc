@@ -1,0 +1,4 @@
+service uskpc /vendor/bin/uskp -u -c
+    class late_start
+    user system
+    oneshot

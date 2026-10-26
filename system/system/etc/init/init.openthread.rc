@@ -1,0 +1,48 @@
+on post-fs-data
+    mkdir /data/misc/openthread 0770 openthread openthread
+    rm /data/misc/openthread/openthread.lock
+
+# Configure wlan0 IPv6 to accept Router Advertisements even when forwarding is enabled.
+# accept_ra=2 allows wlan0 to receive RAs and install default routes while forwarding=1
+# enables Border Router to send ICMPv6 Router Solicitations for upstream discovery.
+# This is reapplied on wlan driver restart to handle wifisvc crashes/restarts.
+on property:wlan.driver.status=ok
+    start otservice
+    write /proc/sys/net/ipv6/conf/wlan0/accept_ra 2
+
+service otservice /system/bin/otbr-agent -I ot0 -B wlan0 -B br0 spinel+hdlc+forkpty:///system/bin/ot-rcp
+    class main
+    user openthread
+    group openthread fifteen_four dbus ace_kvstore ace_group inet vpn net_admin net_raw aipc wakelock
+    capabilities NET_RAW NET_ADMIN
+    onrestart setprop openthread.init.done n
+    onrestart stop connthreadsvc
+    disabled
+
+on property:init.svc.otservice=running
+    write /proc/sys/net/ipv6/conf/all/forwarding 1
+    write /proc/sys/net/ipv6/conf/wlan0/forwarding 1
+    write /proc/sys/net/ipv6/conf/wlan0/accept_ra 2
+    write /proc/sys/net/ipv6/conf/wlan0/accept_ra_rt_info_max_plen 64
+    write /proc/sys/net/ipv6/conf/wlan0/accept_redirects 1
+    write /proc/sys/net/ipv6/conf/wlan0/accept_source_route 1
+    write /proc/sys/net/ipv6/conf/br0/forwarding 1
+    write /proc/sys/net/ipv6/conf/br0/accept_ra 2
+    write /proc/sys/net/ipv6/conf/br0/accept_ra_rt_info_max_plen 64
+    write /proc/sys/net/ipv6/conf/br0/accept_redirects 1
+    write /proc/sys/net/ipv6/conf/br0/accept_source_route 1
+
+    write /proc/sys/net/ipv6/conf/ot0/forwarding 1
+    write /proc/sys/net/ipv6/conf/ot0/accept_ra 2
+    write /proc/sys/net/ipv6/conf/ot0/accept_ra_rt_info_max_plen 64
+    write /proc/sys/net/ipv6/conf/ot0/accept_redirects 1
+    write /proc/sys/net/ipv6/conf/ot0/accept_source_route 1
+
+    # Configure ipv4 forwarding for NAT64
+    write /proc/sys/net/ipv4/ip_forward 1
+    write /proc/sys/net/ipv4/conf/default/forwarding 1
+    write /proc/sys/net/ipv4/conf/wlan0/forwarding 1
+    write /proc/sys/net/ipv4/conf/ot0/forwarding 1
+
+    #
+    setprop openthread.init.done y

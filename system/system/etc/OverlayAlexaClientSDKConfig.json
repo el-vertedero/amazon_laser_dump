@@ -1,0 +1,36 @@
+{
+    "bluetooth": {
+        "btWhaEnabled": false,
+        "adapterPrefix": "Echo"
+    },
+    "aux": {
+        "direction": "SIMPLEX_BIDIRECTIONAL_CONFIGURABLE",
+        "sensesInput": true
+    },
+    "mrm": {
+        "capabilities": {
+            "WholeHomeAudio": {
+                "configurations": {
+                    "assignableChannels": ["ALL", "FRONT_LEFT", "FRONT_RIGHT"],
+                    "clusterTypes": ["CLASSIC_CLUSTER", "BONDED_CLUSTER", "HOME_THEATER_CLUSTER"],
+                    "streamTypes": ["BUFFERED", "REAL_TIME"],
+                    "connectivity": {
+                        "softAP": {
+                            "roles": ["CLIENT"]
+                        }
+                    },
+                    "inputSources": ["AUX"]
+                }
+            }
+        }
+    },
+    "externalMediaPlayer": {
+        "players": {
+            "Spotify:ESDK": {
+                "displayName": "Echo",
+                "modelName": "Echo",
+                "productId": 2000000004
+            }
+        }
+    }
+}

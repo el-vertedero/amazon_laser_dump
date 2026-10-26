@@ -1,0 +1,8 @@
+
+# Reload DSP FW on boot if necessary
+on early-boot && property:persist.dsp_fw.reload=1
+   exec - root cache -- /system/bin/cat /sys/devices/platform/dsp_fw_load/reload
+
+# Load kernel modules for DSP HAL
+on boot
+   insmod /system/lib/modules/dsp_hal.ko

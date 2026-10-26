@@ -1,0 +1,81 @@
+# Import mt851x_amazon rc
+import init.mt851x_amazon.rc
+
+# Device-specific .rc content follows here
+
+on fs
+    # This property is required to enable the android power system to
+    # properly shut down all processes on a reboot or shutdown operation.
+    # This delay represents the amount of time the system will wait for
+    # these processes to die after sending them the SIGTERM signal.
+    # We want to shut these processes down before rebooting to allow
+    # proper syncing/closing of open files including log files.
+    setprop ro.build.shutdown_timeout 2
+
+# Puffin app uses libaccelerometer_event_manager to get notified about tap events. This library
+# needs to configure and read accelerometer measurements, the interfaces for which are exposed
+# through iio_device1 in sysfs. However PuffinApp doesn't have write permissions to these nodes.
+# Since PuffinApp is a part of 'system' user group add that as a group owner for these files and
+# give it write permissions
+on post-fs
+    chown root system /sys/bus/iio/devices/iio:device1/sampling_frequency
+    chmod 0664 /sys/bus/iio/devices/iio:device1/sampling_frequency
+    chown root system /sys/bus/iio/devices/iio:device1/hwfifo_watermark
+    chmod 0664 /sys/bus/iio/devices/iio:device1/hwfifo_watermark
+    chown root system /sys/bus/iio/devices/iio:device1/buffer/enable
+    chmod 0664 /sys/bus/iio/devices/iio:device1/buffer/enable
+    chown root system /sys/bus/iio/devices/iio:device1/buffer/length
+    chmod 0664 /sys/bus/iio/devices/iio:device1/buffer/length
+    chown root system /sys/bus/iio/devices/iio:device1/buffer/watermark
+    chmod 0664 /sys/bus/iio/devices/iio:device1/buffer/watermark
+    chown root system /sys/bus/iio/devices/iio:device1/scan_elements/in_accel_x_en
+    chmod 0664 /sys/bus/iio/devices/iio:device1/scan_elements/in_accel_x_en
+    chown root system /sys/bus/iio/devices/iio:device1/scan_elements/in_accel_y_en
+    chmod 0664 /sys/bus/iio/devices/iio:device1/scan_elements/in_accel_y_en
+    chown root system /sys/bus/iio/devices/iio:device1/scan_elements/in_accel_z_en
+    chmod 0664 /sys/bus/iio/devices/iio:device1/scan_elements/in_accel_z_en
+    chown root system /sys/bus/iio/devices/iio:device1/scan_elements/in_timestamp_en
+    chmod 0664 /sys/bus/iio/devices/iio:device1/scan_elements/in_timestamp_en
+
+# PuffinApp uses libaccelerometer_event_manager to get notified about tap events. This library
+# needs to read accelerometer measurements available through iio_device1 in /dev/. However
+# PuffinApp doesn't have read permissions to this node. Since PuffinApp is a part of 'system'
+# user group add that as a group owner for this node and give it read permissions
+    chown root system /dev/iio:device1
+    chmod 0640 /dev/iio:device1
+
+# The Puffin service must be declared at the device-specific level,
+# as it requires device-specific config file parameters for some
+# platforms (e.g. Doebrite).
+service puffin /system/bin/PuffinApp /system/etc/AlexaClientSDKConfig.json /system/etc/OverlayAlexaClientSDKConfig.json
+   class main
+   user puffin
+   group aipc davs dbus inet ace_kvstore ace_group drmrpc system audio keystore cache shell ace_maplite
+   disabled
+
+on boot
+# set usb pid for Laser (0x2Cx)
+   setprop ro.vendor.usb.pid.mtp 0x02C1
+   setprop ro.vendor.usb.pid.mtp.adb 0x02C2
+   setprop ro.vendor.usb.pid.ptp 0x02C3
+   setprop ro.vendor.usb.pid.ptp.adb 0x02C4
+   setprop ro.vendor.usb.pid.adb 0x02C8
+
+#oobe using mac_sec (temp for Laser)
+   chown system system /proc/idme/mac_sec
+   chmod 440 /proc/idme/mac_sec
+
+on property:sys.boot_completed=1
+   # for enabling zram
+   swapon_all /fstab.zram
+   write /proc/sys/vm/page-cluster 0
+   write /proc/sys/vm/swappiness 100
+
+# perfmonitord
+import init.perfmonitord.rc
+
+# perfhald
+import init.perfhald.rc
+
+# perfrecoveryd
+import init.perfrecoveryd.rc

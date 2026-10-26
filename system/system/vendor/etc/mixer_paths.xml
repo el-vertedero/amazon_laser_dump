@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<mixer>
+	<!-- These are the initial mixer settings -->
+	<ctl name="Reset TAS5805m" value="1" />
+	<!-- route DLM playback 3 chs to I2S -->
+	<ctl name="O04 I22 Switch" value="1" />
+	<ctl name="O05 I23 Switch" value="1" />
+	<ctl name="O06 I24 Switch" value="1" />
+	<ctl name="O07 I25 Switch" value="0" />
+	<ctl name="O08 I26 Switch" value="0" />
+	<ctl name="O09 I27 Switch" value="0" />
+	<ctl name="O10 I28 Switch" value="0" />
+	<ctl name="O11 I29 Switch" value="0" />
+	<!-- route TDM 6 chs to GASRC 0,1,2 -->
+	<ctl name="O42 I42 Switch" value="1" />
+	<ctl name="O43 I43 Switch" value="1" />
+	<ctl name="O44 I44 Switch" value="1" />
+	<ctl name="O45 I45 Switch" value="1" />
+	<ctl name="O46 I46 Switch" value="1" />
+	<ctl name="O47 I47 Switch" value="1" />
+	<ctl name="O48 I48 Switch" value="0" />
+	<ctl name="O49 I49 Switch" value="0" />
+	<!-- route GASRC 0,1,2,3 to CM -->
+	<ctl name="O26 I32 Switch" value="1" />
+	<ctl name="O27 I33 Switch" value="1" />
+	<ctl name="O28 I34 Switch" value="1" />
+	<ctl name="O29 I35 Switch" value="1" />
+	<ctl name="O30 I36 Switch" value="1" />
+	<ctl name="O31 I37 Switch" value="1" />
+	<ctl name="O36 I38 Switch" value="1" />
+	<ctl name="O37 I39 Switch" value="1" />
+	<!-- configure GASRC 0,1,2,3 -->
+	<ctl name="GASRC0 Input Mux" value="Gasrc_6ch" />
+	<ctl name="GASRC0 Output Mux" value="Gasrc_6ch" />
+	<ctl name="GASRC1 Input Mux" value="Gasrc_6ch" />
+	<ctl name="GASRC1 Output Mux" value="Gasrc_6ch" />
+	<ctl name="GASRC2 Input Mux" value="Gasrc_6ch" />
+	<ctl name="GASRC2 Output Mux" value="Gasrc_6ch" />
+	<ctl name="GASRC3 Input Mux" value="Gasrc_2ch" />
+	<ctl name="GASRC3 Output Mux" value="Gasrc_2ch" />
+	<!-- route CM to DSP recording -->
+	<ctl name="VA_IN_IO Mux" value="UL9_IO" />
+	<ctl name="VA_IN Mux" value="UL9" />
+	<ctl name="HAL BE Input Rate" value="96000" />
+	<ctl name="HAL BE Input Period Size" value="768" />
+	<ctl name="HAL BE Input Channels" value="12" />
+	<ctl name="HAL BE Input Period Count" value="4" />
+	<ctl name="HAL BE Input Format" value="S32_LE" />
+	<!-- route DLM playback 4 chs to CM -->
+	<ctl name="O32 I22 Switch" value="1" />
+	<ctl name="O33 I23 Switch" value="1" />
+	<ctl name="O34 I24 Switch" value="1" />
+	<ctl name="O35 I25 Switch" value="1" />
+	<!--route DL2 ultrasound to I2S-->
+	<ctl name="O04 I40 Switch" value="0" />
+	<ctl name="O05 I41 Switch" value="0" />
+	<ctl name="Force_Connect_I40_O04" value="1" />
+	<ctl name="Force_Connect_I40_O05" value="1" />
+	<!--route DL2 ultrasound to CM-->
+	<ctl name="O32 I40 Switch" value="0" />
+	<ctl name="O33 I41 Switch" value="0" />
+	<ctl name="Force_Connect_I40_O32" value="1" />
+	<ctl name="Force_Connect_I40_O33" value="1" />
+	<ctl name="HAL BE Output Rate" value="96000" />
+	<ctl name="HAL BE Output Channels" value="1" />
+	<ctl name="HAL BE Output Format" value="S32_LE" />
+	<ctl name="HAL BE Output Period Size" value="768" />
+	<ctl name="HAL BE Output Period Count" value="20" />
+	<!-- route DL3 to GASRC3 -->
+	<ctl name="O48 I20 Switch" value="1" />
+	<ctl name="O49 I21 Switch" value="1" />
+	<!-- default disconnect DL3 to DL SRC -->
+	<ctl name="O20 I20 Switch" value="0" />
+	<ctl name="O21 I21 Switch" value="0" />
+	<!-- Turn Off HW PCM loopback -->
+	<ctl name="PCM_Tx2Rx_Loopback_Switch" value="0" />
+	<!-- ADC 5140 configuration -->
+	<ctl name="ADC Reset A" value="1" />
+	<ctl name="ADC Reset B" value="1" />
+	<ctl name="Ch1 Slot Offset A" value="0" />
+	<ctl name="Ch2 Slot Offset A" value="1" />
+	<ctl name="Ch3 Slot Offset A" value="2" />
+	<ctl name="Ch4 Slot Offset A" value="34" />
+	<ctl name="Ch1 Slot Offset B" value="3" />
+	<ctl name="Ch2 Slot Offset B" value="32" />
+	<ctl name="Ch3 Slot Offset B" value="33" />
+	<ctl name="Ch4 Slot Offset B" value="35" />
+	<ctl name="Ch1 Gain A" value="15" />
+	<ctl name="Ch2 Gain A" value="15" />
+	<ctl name="Ch3 Gain A" value="15" />
+	<ctl name="Ch4 Gain A" value="0" />
+	<ctl name="Ch1 Gain B" value="15" />
+	<ctl name="Ch2 Gain B" value="15" />
+	<ctl name="Ch3 Gain B" value="15" />
+	<ctl name="Ch4 Gain B" value="0" />
+	<ctl name="Ch1 Digital Capture Vol A" value="201" />
+	<ctl name="Ch2 Digital Capture Vol A" value="201" />
+	<ctl name="Ch3 Digital Capture Vol A" value="201" />
+	<ctl name="Ch4 Digital Capture Vol A" value="0" />
+	<ctl name="Ch1 Digital Capture Vol B" value="201" />
+	<ctl name="Ch2 Digital Capture Vol B" value="201" />
+	<ctl name="Ch3 Digital Capture Vol B" value="201" />
+	<ctl name="Ch4 Digital Capture Vol B" value="0" />
+	<ctl name="DRE Trigger Level A" value="4" />
+	<ctl name="DRE Max Gain A" value="11" />
+	<ctl name="DRE Trigger Level B" value="4" />
+	<ctl name="DRE Max Gain B" value="11" />
+	<ctl name="Ch1 DRE Enable A" value="0" />
+	<ctl name="Ch2 DRE Enable A" value="0" />
+	<ctl name="Ch3 DRE Enable A" value="0" />
+	<ctl name="Ch4 DRE Enable A" value="0" />
+	<ctl name="Ch1 DRE Enable B" value="0" />
+	<ctl name="Ch2 DRE Enable B" value="0" />
+	<ctl name="Ch3 DRE Enable B" value="0" />
+	<ctl name="Ch4 DRE Enable B" value="0" />
+	<!-- LineOut (HPA_GAIN) off -->
+	<ctl name="LineOut_Gain_Enable" value="0" />
+	<!-- AMP configuration -->
+	<ctl name="TAS5805m EQ Enable" value="0" />
+	<ctl name="Master TAS5805m Playback Volume A" value="110" />
+	<ctl name="Master TAS5805m Playback Volume B" value="110" />
+	<!-- DL2 Playback  -->
+	<ctl name="PCM_DL2_IO Switch" value="1" />
+	<ctl name="BE_DL2_IO Switch" value="1" />
+
+	<!-- These are actual sound device specific mixer settings -->
+	<path name="normal-playback speaker">
+		<ctl name="Speaker_Power_Enable" value="1" />
+		<ctl name="O04 I22 Switch" value="1" />
+		<ctl name="O05 I23 Switch" value="1" />
+		<ctl name="O06 I24 Switch" value="1" />
+		<ctl name="O07 I25 Switch" value="1" />
+	</path>
+
+	<path name="normal-playback headphone">
+		<ctl name="LineOut_Enable" value="1" />
+		<ctl name="LineOut_Direction_Select" value="1" />
+		<ctl name="O20 I20 Switch" value="1" />
+		<ctl name="O21 I21 Switch" value="1" />
+		<ctl name="Line_InOut_Mute" value="0" />
+	</path>
+
+	<path name="normal-playback bt-echo-reference">
+		<ctl name="LineOut_Enable" value="0" />
+	</path>
+
+	<path name="normal-playback receiver">
+	</path>
+
+	<path name="normal-capture line-in">
+		<ctl name="LineOut_Enable" value="0" />
+		<ctl name="LineOut_Direction_Select" value="0" />
+		<ctl name="LineIn_Power_Enable" value="1" />
+		<ctl name="O14 I60 Switch" value="1" />
+		<ctl name="O15 I61 Switch" value="1" />
+		<ctl name="Audio_PGA1_Setting" value="10dB" />
+		<ctl name="Audio_PGA2_Setting" value="10dB" />
+		<ctl name="Line_InOut_Mute" value="0" />
+	</path>
+
+	<path name="normal-playback speaker-and-headphone">
+	</path>
+
+	<path name="normal-playback bt-sco">
+		<ctl name="O00 I00 Switch" value="1" />
+		<ctl name="O01 I01 Switch" value="1" />
+	</path>
+
+	<path name="low-latency-playback speaker">
+	</path>
+
+	<path name="low-latency-playback headphone">
+	</path>
+
+	<path name="low-latency-playback receiver">
+	</path>
+
+	<path name="low-latency-playback speaker-and-headphone">
+	</path>
+
+	<path name="normal-capture builtin-mic">
+	</path>
+
+	<path name="normal-capture headset-mic">
+	</path>
+
+	<path name="normal-capture bt-sco">
+		<ctl name="O02 I02 Switch" value="1" />
+		<ctl name="O03 I03 Switch" value="1" />
+	</path>
+
+	<path name="speaker">
+	</path>
+
+	<path name="headphone">
+	</path>
+
+	<path name="receiver">
+	</path>
+
+	<path name="speaker-and-headphone">
+		<path name="speaker" />
+		<path name="headphone" />
+	</path>
+
+	<path name="digital-mic">
+	</path>
+
+	<path name="builtin-mic">
+	</path>
+
+	<path name="back-mic">
+	</path>
+
+	<path name="headset-mic">
+	</path>
+
+	<path name="line-in">
+	</path>
+
+</mixer>

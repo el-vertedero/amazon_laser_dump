@@ -1,0 +1,18 @@
+service perfhald /system/bin/perfhald
+    user root
+    group system readproc aipc
+    writepid /dev/cpuctl/bg_non_interactive/cgroup.procs
+    class main
+
+on post-fs
+    mkdir /dev/memcg/bluebottle
+    mkdir /dev/memcg/non-bluebottle
+    chown root system /dev/memcg/bluebottle/memory.limit_in_bytes
+    chown root system /dev/memcg/non-bluebottle/memory.limit_in_bytes
+    chmod 0660 /dev/memcg/bluebottle/memory.limit_in_bytes
+    chmod 0440 /dev/memcg/bluebottle/memory.pressure_level
+    chmod 0660 /dev/memcg/non-bluebottle/memory.limit_in_bytes
+    chmod 0440 /dev/memcg/non-bluebottle/memory.pressure_level
+    write /dev/memcg/bluebottle/memory.oom_control 1
+    write /dev/memcg/non-bluebottle/memory.oom_control 1
+

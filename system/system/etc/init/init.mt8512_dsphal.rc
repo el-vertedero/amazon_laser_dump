@@ -1,0 +1,3 @@
+on boot
+   insmod /system/lib/modules/mt8512-dsp-hal-pcm.ko
+

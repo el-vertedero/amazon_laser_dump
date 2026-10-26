@@ -1,0 +1,12 @@
+on post-fs
+    insmod /system/lib/modules/gp712_osal.ko
+    insmod /system/lib/modules/gp712_osaloem.ko
+    insmod /system/lib/modules/gp712_mac.ko
+
+on post-fs-data
+    chown zigbee zigbee /data/misc/zigbee/
+    chown zigbee zigbee /data/misc/zigbee/c7b.fb.bin
+    chown zigbee zigbee /data/misc/zigbee/c7b.psb.bin
+    chown zigbee zigbee /data/misc/zigbee/c7b.psb.factory.bin
+    chown zigbee fifteen_four /dev/gp
+    chmod 0660 /dev/gp

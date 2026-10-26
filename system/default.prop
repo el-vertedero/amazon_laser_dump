@@ -1,0 +1,22 @@
+#
+# ADDITIONAL_DEFAULT_PROPERTIES
+#
+debug.sf.nobootanimation=1
+ro.adb.secure=1
+ro.oem_unlock_supported=1
+persist.service.acm.enable=0
+ro.secure=1
+security.perf_harden=1
+ro.allow.mock.location=0
+ro.debuggable=0
+debug.atrace.tags.enableflags=0
+persist.sys.usb.config=adb
+ro.mount.fs=EXT4
+camera.disable_zsl_mode=1
+#
+# BOOTIMAGE_BUILD_PROPERTIES
+#
+ro.bootimage.build.date=Wed Oct 21 01:01:34 UTC 2026
+ro.bootimage.build.date.utc=1792544494
+ro.bootimage.build.fingerprint=Amazon/laser_mt8512/laser:6.0/NS6575/8344N:user/amz-p,release-keys
+
