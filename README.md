@@ -1,0 +1,14 @@
+# laser_mt8512-user 6.0 NS6575 8344 amz-p,release-keys
+- manufacturer: amazon
+- platform: mt8512
+- codename: laser
+- flavor: laser_mt8512-user
+- release: 7.1.2
+- id: NS6575
+- incremental: 0013323245700
+- tags: amz-p,release-keys
+- fingerprint: Amazon/laser_mt8512/laser:6.0/NS6575/8344N:user/amz-p,release-keys
+- is_ab: true
+- brand: Amazon
+- branch: laser_mt8512-user-6.0-NS6575-8344-amz-p,release-keys
+- repo: amazon_laser_dump
